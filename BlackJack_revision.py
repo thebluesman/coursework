@@ -43,3 +43,12 @@ class Hand:
         for card in self.cards:
             card_name = card.__str__()
             hand_comp += " " + card_name
+
+            return "The hand has %s " %hand_comp
+
+    def card_add(self,card):
+        self.cards.append(card)
+
+        if card.rank == 'A':
+            self.ace = True
+        self.value += card_val[card.rank]
