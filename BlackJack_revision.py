@@ -44,7 +44,7 @@ class Hand:
             card_name = card.__str__()
             hand_comp += " " + card_name
 
-            return "The hand has %s " %hand_comp
+            return "The hand has %s" %hand_comp
 
     def card_add(self,card):
         self.cards.append(card)
@@ -52,3 +52,27 @@ class Hand:
         if card.rank == 'A':
             self.ace = True
         self.value += card_val[card.rank]
+
+    def calc_value(self):
+
+        if self.ace == True and self.value < 12:
+            return self.value + 10
+        else:
+            return self.value
+
+    def draw(self,hidden):
+
+        if hidden == True and playing == True:
+            starting_card = 1
+        else:
+            starting_card = 0
+        for x in range(starting_card,len(self.cards))
+            self.cards[x].draw()
+
+class Deck:
+
+    def __init__(self):
+        self.deck = []
+        for suit in suits:
+            for rank in ranking:
+                self.deck.append(Card(suit,rank))
