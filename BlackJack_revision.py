@@ -66,7 +66,7 @@ class Hand:
             starting_card = 1
         else:
             starting_card = 0
-        for x in range(starting_card,len(self.cards))
+        for x in range(starting_card,len(self.cards)):
             self.cards[x].draw()
 
 class Deck:
@@ -167,13 +167,13 @@ def player_input():
 
     plin = raw_input().lower()
 
-    if plin = 'h':
+    if plin == 'h':
         hit()
-    elif plin = 's':
+    elif plin == 's':
         stand()
-    elif plin = 'd':
+    elif plin == 'd':
         deal_cards()
-    elif plin = 'q':
+    elif plin == 'q':
         game_exit()
     else:
         print "Invalid entry. Please input either h, s, q or d"
