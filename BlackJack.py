@@ -140,7 +140,7 @@ def hit():
         if player_hand.calc_val() <= 21:
             player_hand.card_add(deck.deal())
 
-        print "Player hand is %s" %player_hand
+        print "Player's hand is %s" %player_hand
 
         if player_hand.calc_val() > 21:
             result = 'Busted! ' + restart_phrase
@@ -158,7 +158,7 @@ def stand():
 
     if playing == False:
         if player_hand.calc_val() > 0:
-            result = "Sorry you can't stand!"
+            result = "Sorry you cannot stand!"
 
     else:
 
@@ -166,12 +166,12 @@ def stand():
             dealer_hand.card_add(deck.deal())
 
         if dealer_hand.calc_val() > 21:
-            result = "Dealer Busts! You win! " + restart_phrase
+            result = "Dealer Busts! You win, bro! " + restart_phrase
             chip_pool += bet
             playing = False
 
         elif dealer_hand.calc_val() < player_hand.calc_val():
-            result = "You beat the dealer! You win! " + restart_phrase
+            result = "You beat the dealer! You win dawg! " + restart_phrase
             chip_pool += bet
             playing = False
 
@@ -198,7 +198,7 @@ def game_step():
     dealer_hand.draw(hidden=True)
 
     if playing == False:
-        print " Dealer hand total is " + str(dealer_hand.calc_val())
+        print " Dealer hand total is awesome: " + str(dealer_hand.calc_val())
         print "Chip Total: " + str(chip_pool)
 
     else:
